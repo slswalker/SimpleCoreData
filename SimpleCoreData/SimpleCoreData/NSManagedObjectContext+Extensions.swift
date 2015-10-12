@@ -46,3 +46,9 @@ extension NSManagedObjectContext {
         }
     }
 }
+
+extension NSManagedObjectContext {
+    public func setupNotificationObserving(mainContext: NSManagedObjectContext, backgroundContext: NSManagedObjectContext) {
+        mainContext.addCon
+    }
+}

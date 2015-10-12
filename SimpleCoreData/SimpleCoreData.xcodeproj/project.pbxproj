@@ -16,8 +16,13 @@
 		671C657B1BC873AF00349A41 /* SimpleCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C657A1BC873AF00349A41 /* SimpleCoreDataUITests.swift */; };
 		671C65891BC873BB00349A41 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671C65881BC873BB00349A41 /* CoreData.framework */; };
 		671C658C1BC873D300349A41 /* NSPersistentStoreCoordinate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C658B1BC873D300349A41 /* NSPersistentStoreCoordinate+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		671C65901BC875EC00349A41 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C658F1BC875EC00349A41 /* NSManagedObjectContext.swift */; settings = {ASSET_TAGS = (); }; };
+		671C65901BC875EC00349A41 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C658F1BC875EC00349A41 /* NSManagedObjectContext+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		671C65921BC8762000349A41 /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C65911BC8762000349A41 /* NSManagedObject+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		671C65D11BCC22F800349A41 /* ContextOwnerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C65D01BCC22F800349A41 /* ContextOwnerType.swift */; settings = {ASSET_TAGS = (); }; };
+		671C65D51BCC257800349A41 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C65D41BCC257800349A41 /* DataProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		671C65D71BCC2F2500349A41 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C65D61BCC2F2500349A41 /* FetchedResultsDataProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		671C65D91BCC387A00349A41 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C65D81BCC387A00349A41 /* TableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		671C65DB1BCC3A9900349A41 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C65DA1BCC3A9900349A41 /* DataSource.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +58,13 @@
 		671C657C1BC873AF00349A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		671C65881BC873BB00349A41 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		671C658B1BC873D300349A41 /* NSPersistentStoreCoordinate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPersistentStoreCoordinate+Extensions.swift"; sourceTree = "<group>"; };
-		671C658F1BC875EC00349A41 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
+		671C658F1BC875EC00349A41 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		671C65911BC8762000349A41 /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
+		671C65D01BCC22F800349A41 /* ContextOwnerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextOwnerType.swift; sourceTree = "<group>"; };
+		671C65D41BCC257800349A41 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		671C65D61BCC2F2500349A41 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchedResultsDataProvider.swift; path = Data/FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
+		671C65D81BCC387A00349A41 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSource.swift; path = Data/TableViewDataSource.swift; sourceTree = "<group>"; };
+		671C65DA1BCC3A9900349A41 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,11 +149,32 @@
 		671C658A1BC873C000349A41 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				671C658B1BC873D300349A41 /* NSPersistentStoreCoordinate+Extensions.swift */,
-				671C658F1BC875EC00349A41 /* NSManagedObjectContext.swift */,
-				671C65911BC8762000349A41 /* NSManagedObject+Extensions.swift */,
+				671C65D01BCC22F800349A41 /* ContextOwnerType.swift */,
+				671C65D31BCC250300349A41 /* Source and Provider */,
+				671C65D21BCC24EE00349A41 /* Model Extensions */,
 			);
 			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		671C65D21BCC24EE00349A41 /* Model Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				671C658B1BC873D300349A41 /* NSPersistentStoreCoordinate+Extensions.swift */,
+				671C658F1BC875EC00349A41 /* NSManagedObjectContext+Extensions.swift */,
+				671C65911BC8762000349A41 /* NSManagedObject+Extensions.swift */,
+			);
+			name = "Model Extensions";
+			sourceTree = "<group>";
+		};
+		671C65D31BCC250300349A41 /* Source and Provider */ = {
+			isa = PBXGroup;
+			children = (
+				671C65DA1BCC3A9900349A41 /* DataSource.swift */,
+				671C65D41BCC257800349A41 /* DataProvider.swift */,
+				671C65D61BCC2F2500349A41 /* FetchedResultsDataProvider.swift */,
+				671C65D81BCC387A00349A41 /* TableViewDataSource.swift */,
+			);
+			name = "Source and Provider";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,11 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				671C65D91BCC387A00349A41 /* TableViewDataSource.swift in Sources */,
+				671C65D51BCC257800349A41 /* DataProvider.swift in Sources */,
 				671C655D1BC873AF00349A41 /* ViewController.swift in Sources */,
+				671C65D71BCC2F2500349A41 /* FetchedResultsDataProvider.swift in Sources */,
 				671C658C1BC873D300349A41 /* NSPersistentStoreCoordinate+Extensions.swift in Sources */,
 				671C655B1BC873AF00349A41 /* AppDelegate.swift in Sources */,
+				671C65D11BCC22F800349A41 /* ContextOwnerType.swift in Sources */,
 				671C65921BC8762000349A41 /* NSManagedObject+Extensions.swift in Sources */,
-				671C65901BC875EC00349A41 /* NSManagedObjectContext.swift in Sources */,
+				671C65DB1BCC3A9900349A41 /* DataSource.swift in Sources */,
+				671C65901BC875EC00349A41 /* NSManagedObjectContext+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +543,7 @@
 				671C65811BC873AF00349A41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		671C65821BC873AF00349A41 /* Build configuration list for PBXNativeTarget "SimpleCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +552,7 @@
 				671C65841BC873AF00349A41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		671C65851BC873AF00349A41 /* Build configuration list for PBXNativeTarget "SimpleCoreDataUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +561,7 @@
 				671C65871BC873AF00349A41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

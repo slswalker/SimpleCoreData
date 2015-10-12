@@ -9,7 +9,11 @@
 import CoreData
 
 public class ManagedObject: NSManagedObject {
+    @NSManaged public private(set) var identifier: NSString?
     
+    public func isOnlyLocal() -> Bool {
+        return identifier != nil
+    }
 }
 
 public protocol ManagedObjectType : class {
@@ -73,6 +77,16 @@ extension ManagedObjectType where Self: ManagedObject {
                 fatalError("Fetched objects have wrong type")
         }
         return result
+    }
+    
+    public static func fetchInContext(context: NSManagedObjectContext, forIdentifier identifier: String) -> Self? {
+        let request = NSFetchRequest(entityName: Self.entityName)
+        request.predicate = NSPredicate(format: "%K == %@", "identifier", identifier)
+        guard let result = try! context.executeFetchRequest(request) as? [Self]
+            else {
+                fatalError("Fetched objects have wrong type")
+        }
+        return result.count > 0 ? result.first : nil
     }
     
     public static func countInContext(context: NSManagedObjectContext, @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> Int {
